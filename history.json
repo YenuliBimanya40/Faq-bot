@@ -214,5 +214,23 @@
         "answer": "I'm sorry, I don't have an answer for that question. Please contact our support team directly for assistance.",
         "score": 0.4181,
         "fallback": true
+    },
+    {
+        "timestamp": "2026-07-03T22:20:41.868570",
+        "company": "cloud99x",
+        "question": "Can you help improve the design of my product?",
+        "matched_question": "Can you help improve the design of my product?",
+        "answer": "Yes, Cloud99X offers UI/UX design and user experience optimization.",
+        "score": 1.0,
+        "fallback": false
+    },
+    {
+        "timestamp": "2026-07-03T22:21:01.171087",
+        "company": "connect_bpo",
+        "question": "Can you help improve the design of my product?",
+        "matched_question": "Can you help with bookkeeping?",
+        "answer": "I'm sorry, I don't have an answer for that question. Please contact our support team directly for assistance.",
+        "score": 0.4016,
+        "fallback": true
     }
 ]

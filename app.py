@@ -4,9 +4,12 @@ import json
 import datetime
 from chatbot import ChatbotService
 
-app = Flask(__name__, static_folder='static', template_folder='templates')
-chatbot_service = ChatbotService('faqs')
-HISTORY_FILE = 'history.json'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+IS_VERCEL = os.environ.get('VERCEL', False)
+
+app = Flask(__name__, static_folder=os.path.join(BASE_DIR, 'static'), template_folder=os.path.join(BASE_DIR, 'templates'))
+chatbot_service = ChatbotService(os.path.join(BASE_DIR, 'faqs'))
+HISTORY_FILE = '/tmp/history.json' if IS_VERCEL else os.path.join(BASE_DIR, 'history.json')
 
 def load_history():
     if os.path.exists(HISTORY_FILE):

@@ -5,7 +5,9 @@ import numpy as np
 import os
 
 class ChatbotService:
-    def __init__(self, faqs_folder='faqs'):
+    def __init__(self, faqs_folder=None):
+        if faqs_folder is None:
+            faqs_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'faqs')
         self.faqs_folder = faqs_folder
         if not os.path.exists(self.faqs_folder):
             os.makedirs(self.faqs_folder)
