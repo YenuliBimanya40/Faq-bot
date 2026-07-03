@@ -2,7 +2,7 @@
 // CONFIGURATION
 // ============================================================
 
-const API_URL = 'http://localhost:5000/chat';
+const API_URL = window.location.origin + '/chat';
 
 // Detect company from domain or URL param (merged from chatbot-routing branch)
 function getCompanyFromDomain() {
@@ -20,7 +20,8 @@ function getCompanyFromDomain() {
         'cloud99x.com':      'cloud99x',
         'www.cloud99x.com':  'cloud99x',
         'localhost':         'connect_bpo',
-        '127.0.0.1':         'connect_bpo'
+        '127.0.0.1':         'connect_bpo',
+        'web-chat-bot-sigma.vercel.app': 'connect_bpo'
     };
     return domainMap[hostname] || null;
 }
