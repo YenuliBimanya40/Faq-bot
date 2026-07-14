@@ -33,7 +33,12 @@ def add_cors_headers(response):
 
 @app.route('/')
 def index():
-    # Render main template
+    # Default: dummy website with embedded chat widget
+    return render_template('demo.html')
+
+@app.route('/dashboard')
+def dashboard():
+    # Admin dashboard / chat interface
     return render_template('index.html')
 
 @app.route('/widget')
@@ -43,7 +48,7 @@ def widget():
 
 @app.route('/demo')
 def demo():
-    # Render the standalone dummy website with embedded chat widget
+    # Alias for the dummy website (same as /)
     return render_template('demo.html')
 
 @app.route('/api/companies', methods=['GET'])
